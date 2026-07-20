@@ -11,7 +11,11 @@ import reportIssues_Icon from "../../Assets/icons8-report-24.png";
 import trackStatus_Icon from "../../Assets/icons8-graph-50.png";
 import betterCampus_Icon from "../../Assets/icons8-protection-50.png";
 
+//Importing functions
+import SignIn_btn_clicked from "../../functions/signIn_btn_clicked"
+
 const SignUp = () => {
+
   return (
     <div className="main">
       <div className="slides">
@@ -67,9 +71,9 @@ const SignUp = () => {
         <div className="welcome-banner">
           <h1>Welcome to CollegeTwin </h1>
           <p>Sign in with your college Google account to continue.</p>
-          <button className="signIn-btn">
-            <img src={googleIcon} alt="" />
-            <span>Continue with Google</span>
+          <button className="signIn-btn" onClick={SignIn_btn_clicked}>
+            <img src={googleIcon} alt="" onClick={SignIn_btn_clicked} />
+            <span onClick={SignIn_btn_clicked}>Continue with Google</span>
           </button>
         </div>
       </div>

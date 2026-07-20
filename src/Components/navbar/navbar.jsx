@@ -7,6 +7,9 @@ import './navbar.css'
 //Importing Assets
 import logo from "../../Assets/logo.png";
 
+//Importing functions
+import SignIn_btn_clicked from "../../functions/signIn_btn_clicked"
+
 const Navbar =  () => {
   const [menuOpen, setMenuOpen] = useState(false);
   
@@ -61,9 +64,9 @@ const Navbar =  () => {
             <a href="#contact" className="nav-link">
               Contact
             </a>
-            <a href="#signup" className="signup-btn">
-              Sign Up
-            </a>
+            <button  onClick={SignIn_btn_clicked} className="navbar-signIn-btn">
+              Get Started
+            </button>
           </nav>
         </div>
       </header>

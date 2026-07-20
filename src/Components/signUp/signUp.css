@@ -1,15 +1,12 @@
-
-.main{
-    display:flex;
+.main {
+  display: flex;
 }
 
-.slides{
-    padding: 0;
-    width: 60vw;
-    height: 83vh;
+.slides {
+  padding: 0;
+  width: 60vw;
+  height: 83vh;
 }
-
-
 
 .login-banner {
   grid-column: span 2 / span 2;
@@ -18,132 +15,125 @@
   text-align: center;
 }
 
-
-.slides{
-    color: #fff;
-    display: flex;
-    text-align: center;
-    line-height: 1.5;
-    flex-grow: 1;
-    min-width: 0;
-    gap: 12vw;
+.slides {
+  color: #fff;
+  display: flex;
+  text-align: center;
+  line-height: 1.5;
+  flex-grow: 1;
+  min-width: 0;
+  gap: 12vw;
 }
 
-.qoute{
-    display: flex;
-    border: 1px solid #00d2d3;
-    border-radius: 20px;
-    align-items: center;
-    font-size: 0.6rem;
-    padding: 5px 10px 5px 5px;
-    width: fit-content;
-    height: fit-content;
-    font-weight: 100;
-    background-color: rgba(35, 42, 42, 0.699);
-    margin-bottom: 0.5vh;
-    h3{
-        margin: 0px;
-    }
-    img{
-        width: 28px;
-        height: 22px;
-        
-    }
-}
-
-
-.slide1{
-    margin:15vh 10vh 5vh 5vh;
-    line-height: 1.2;
-}
-span{
-    color: #00d2d3;
-}
-#text-home{
-    color: #e1ebeb;
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin: 0vh;
-    span{
-      border-right: 2px solid #00d2d3;
-      animation: blink 1.5s infinite;
-      padding-right: 5px;
-    }     
-    
-}   
-
-@keyframes blink {
-  50% {
-    border-color: transparent; 
+.qoute {
+  display: flex;
+  border: 1px solid #00d3d3a2;
+  border-radius: 20px;
+  align-items: center;
+  font-size: 0.6rem;
+  padding: 5px 10px 5px 5px;
+  width: fit-content;
+  height: fit-content;
+  font-weight: 100;
+  background-color: rgba(35, 42, 42, 0.507);
+  margin-bottom: 0.5vh;
+  h3 {
+    margin: 0px;
+  }
+  img {
+    width: 28px;
+    height: 22px;
   }
 }
 
-#text-slide1{
-    color: #ffffffbf;
-    font-size: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin: 1.5vh 0vh 0vh 0vh;
-    padding: 0px 0px 0px 0px;
-    WIDTH: 35vw;
-    text-align: left;
-    
+.slide1 {
+  margin: 15vh 10vh 5vh 5vh;
+  line-height: 1.2;
+}
+span {
+  color: #00d2d3;
+}
+#text-home {
+  color: #e1ebeb;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0vh;
+  span {
+    border-right: 2px solid #00d2d3;
+    animation: blink 1.5s infinite;
+    padding-right: 5px;
+  }
 }
 
-.features-info{
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+#text-slide1 {
+  color: #ffffffbf;
+  font-size: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 1.5vh 0vh 0vh 0vh;
+  padding: 0px 0px 0px 0px;
+  width: 35vw;
+  text-align: left;
+}
+
+.features-info {
   margin-top: 20px;
   width: 40vw;
   height: auto;
-  background-color: rgba(35, 42, 42, 0.429);
+  background-color: rgba(35, 42, 42, 0.507);
   border-radius: 35px;
-  
-  ul{
+
+  ul {
     display: flex;
     padding: 2px;
     gap: 4vw;
     margin: 8px;
     border-left: #333;
   }
-  .feature{
+  .feature {
     display: flex;
     align-items: center;
-    img{
+    img {
       width: 20px;
       height: 20px;
       border-radius: 50%;
       padding: 5px;
     }
 
-    #reportIssues_Icon{
+    #reportIssues_Icon {
       border: 1px solid #00d2d3;
     }
-    #trackStatus_Icon{
+    #trackStatus_Icon {
       border: 1px solid #0770d0;
     }
-    #betterCampus_Icon{
+    #betterCampus_Icon {
       border: 1px solid #7b56c1;
     }
 
-
-    .feature-text{
+    .feature-text {
       display: flex;
       flex-direction: column;
-      h4, p{
+      h4,
+      p {
         padding: 0px 5px;
         margin: 0px;
         text-align: left;
       }
-      h4{
+      h4 {
         font-size: small;
       }
-      p{
+      p {
         font-size: x-small;
       }
-
     }
   }
 }
-
 
 .welcome-banner {
   display: flex;
@@ -159,37 +149,164 @@ span{
   background-position: center;
   background-repeat: no-repeat;
   color: black;
-  h1{
-    margin-top: 20vh;
-    margin-bottom: 0;
-    font-size:x-large;
+  background-color: none;
+  h1 {
+    margin-top: 22vh;
+    margin-bottom: 1vh;
+    font-size: x-large;
   }
-  p{
+  p {
     margin-top: 0px;
     width: 20vw;
     font-size: medium;
+    line-height: 1rem;
   }
-  .signIn-btn{
+  .signIn-btn {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 25vw;
     height: 6vh;
-    border-radius: 15px;
+    border-radius: 18px;
     background-color: #007bff;
     border: 0;
-    align-content: center;
-    img{
+    justify-content: center;
+    cursor: pointer;
+
+    img {
       width: 25px;
       height: 25px;
       background-color: white;
       border-radius: 50%;
     }
-    span{
+    span {
       padding: 5px;
       color: white;
       font-weight: 500;
+      text-align: left;
+      width: fit-content;
     }
   }
 }
 
+.signIn-btn:hover {
+  background-color: #1e88f8;
+}
+
+.signIn-btn:active {
+  background-color: #007bff; /* Darker fill when clicked */
+  transform: scale(0.97);    /* Pressed tactile effect */
+}
+
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .slides{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    height: 95vh;
+  }
+  .slide1{
+    width: 250px;
+    margin-left: 15px;
+    margin-bottom: 6px;
+    margin-top: 5vh;
+  }
+  #text-slide1{
+    font-size: small;
+    width: 280px;
+  }
+  .qoute{
+    width: 135px;
+    .protection-icon{
+      width: 15px;
+      height: 12px;
+    }
+    h3{
+      font-size: 0.5rem;
+      text-align: left;
+    }
+  }
+  #text-home{
+    font-size: x-large;
+    height: 30px;
+    width: fit-content;
+    border-right: 1px;
+    span{
+      width: fit-content;
+      height: fit-content;
+    }
+  }
+
+  .features-info{
+    width: fit-content;
+    height: max-content;
+    margin-top: 15px;
+    ul{
+      width: fit-content;
+      gap: 2vw;
+      margin-left: 0;
+      padding-left: 10px;
+
+    }
+  }
+  .feature {
+    width: fit-content;
+    height: 30px;
+    img {
+      width: 18px;
+      height: 15px;
+      border-radius: 50%;
+      padding: 5px;
+    }
+
+    #reportIssues_Icon, #trackStatus_Icon, #betterCampus_Icon{
+      width: 18px;
+      height: 15px;
+      border-radius: 50%;
+      padding: 5px;
+    }
+
+    
+  }
+  .feature-text {
+      gap: 1vw;
+      text-align: left;
+        h4  {
+          font-size: 0.4rem !important;
+          
+
+        }
+        p {
+          font-size: 0.3rem !important;
+        }
+      }
+  .welcome-banner{
+    width: 88vw;
+    height: 40vh;
+    background-position: bottom; 
+  background-size: cover;      
+  background-repeat: no-repeat;
+  border-radius: 40px;
+    h1{
+      margin-top: 8vh;
+      width: auto;
+      font-size: large;
+    }
+    p{
+      width: 50vw;
+      font-size: x-small;
+    }
+    .signIn-btn{
+      width: 60vw;
+      height: 5vh;
+    }
+  }
+}
+
+/* tablet devices */
+@media (max-width: 1024px) {
+
+}
