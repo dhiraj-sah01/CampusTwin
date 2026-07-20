@@ -69,7 +69,7 @@ const SignUp = () => {
           </div>
         </div>
         <div className="welcome-banner">
-          <h1>Welcome to CollegeTwin </h1>
+          <h1>Welcome to CampusTwin </h1>
           <p>Sign in with your college Google account to continue.</p>
           <button className="signIn-btn" onClick={SignIn_btn_clicked}>
             <img src={googleIcon} alt="" onClick={SignIn_btn_clicked} />

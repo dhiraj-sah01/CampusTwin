@@ -30,3 +30,8 @@ h1 {
     /* height:fit-content; */
   }
 }
+
+/* tablet devices */
+@media (max-width: 1024px) {
+
+}

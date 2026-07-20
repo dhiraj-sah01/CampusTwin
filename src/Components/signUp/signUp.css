@@ -5,7 +5,7 @@
 .slides {
   padding: 0;
   width: 60vw;
-  height: 83vh;
+  height: 84vh;
 }
 
 .login-banner {
@@ -150,6 +150,7 @@ span {
   background-repeat: no-repeat;
   color: black;
   background-color: none;
+  font-family: serif ;
   h1 {
     margin-top: 22vh;
     margin-bottom: 1vh;
@@ -172,6 +173,7 @@ span {
     border: 0;
     justify-content: center;
     cursor: pointer;
+
 
     img {
       width: 25px;
@@ -307,6 +309,28 @@ span {
 }
 
 /* tablet devices */
-@media (max-width: 1024px) {
+@media screen and (min-width: 770px) and (max-width: 990px){
+
+  .slides{
+    gap: 0vw;
+    height: 95vh;
+  }
+  #text-home{
+    font-size: 2rem;
+      height: auto;
+
+    
+  }
+  .welcome-banner{
+    p{
+      width: 250px;
+    }
+  }
+  .features-info{
+    width: 50vw;
+    ul{
+      gap: 2vw;
+    }
+  }
 
 }

@@ -6,7 +6,6 @@
 }
 
 .navbar-container {
-
   max-width: 100%;
   top: 0;
   position: sticky;
@@ -53,6 +52,7 @@
   display: flex;
   align-items: center;
   gap: 60px;
+  
 }
 
 .nav-menu a {
@@ -75,11 +75,16 @@
   cursor: pointer;
   border: 0;
   font-weight: 600;
+  transition: all 0.3s ease-in-out; 
+  margin: 10px 10px 10px 0px;
 }
 
 .navbar-signIn-btn:hover {
   background: linear-gradient(to right,#0089b2, #00b8b4);
+  transform: scale(1.02); 
+  box-shadow: 0 0 6px #080808a6;
 }
+
 
 
 
@@ -94,7 +99,7 @@
   height: 3px;
   background: #d7d6d6;
   margin: 5px;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 
@@ -125,6 +130,10 @@
       width: 20px;
       margin: 0 2px 2px 2px;
     }
+
+  }
+  .navbar-signIn-btn{
+    width: 90%;
   }
 
   .hamburger.active span:nth-child(1) {
@@ -138,18 +147,23 @@
   .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(1.5px, -8px);
   }
-
+ 
   .nav-menu {
-    position: absolute;
-    top: 70px;
-    left: -100%;
+    position: fixed;
+    top: 58px;
+    right: -800px;
     width: 100%;
-    background: white;
+    background: rgba(234, 233, 233, 0.904);
     flex-direction: column;
     gap: 25px;
     padding: 30px 0;
     transition: 0.3s;
-    border-top: 1px solid #eee;
+    border: 1px solid #000000;
+    border-radius: 30px;
+   a{
+    color: #000000;
+    text-align: center;
+   }
   }
 
   .nav-menu.active {
@@ -159,8 +173,13 @@
 
 .native-modal{
     border-radius: 30px;
-    width: 800px;
-    height: 500px;
+    width: 80px;
+    height: 50px;
     background-color: rgba(23, 22, 22, 0.717);
     color: #fff;
+}
+
+/* tablet devices */
+@media (max-width: 990px) {
+
 }

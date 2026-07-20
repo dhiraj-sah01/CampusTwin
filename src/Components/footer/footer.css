@@ -3,7 +3,7 @@
   color: #fff;
   padding: 0;
   text-align: center;
-  height: 8vh;
+  height: 7vh;
   bottom: 0;
   position: fixed;
   bottom: 0;
@@ -21,5 +21,12 @@
     p{
       text-align: center;
     }
+  }
+}
+
+/* tablet devices */
+@media screen and (min-width: 770px) and (max-width: 990px){
+  .footer{
+    height: 5vh;
   }
 }
