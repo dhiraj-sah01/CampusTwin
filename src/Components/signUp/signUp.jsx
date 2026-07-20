@@ -17,7 +17,7 @@ import SignIn_btn_clicked from "../../functions/signIn_btn_clicked"
 const SignUp = () => {
 
   return (
-    <div className="main">
+    <div className="SignIn">
       <div className="slides">
         <div className="slide1">
           <div className="qoute">

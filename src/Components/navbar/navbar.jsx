@@ -1,5 +1,6 @@
 // Importing react components
 import React, {useState, useRef}  from "react";
+import { Link } from "react-router-dom";
 
 //Importing css files
 import './navbar.css'
@@ -33,9 +34,9 @@ const Navbar =  () => {
         <div className="navbar-container">
           <div className="logo">
             <img src={logo} alt="Logo" className="logo-image" />
-            <a href="/">
+            <Link to="/">
               Campus<span>Twin</span>
-            </a>
+            </Link>
           </div>
 
           <div
@@ -48,22 +49,15 @@ const Navbar =  () => {
           </div>
 
           <nav className={menuOpen ? "nav-menu active" : "nav-menu"}>
-            <a href="#about" onClick={openModal} className="nav-link">
+            <Link to="/about" className="nav-link">
               About
-            </a>
-            <dialog ref={dialogRef} className="native-modal">
-              <h2>Information</h2>
-              <p>This React popup was opened safely via an anchor link!</p>
-              <button onClick={closeModal} className="close-btn">
-                Close Window
-              </button>
-            </dialog>
-            <a href="#features" className="nav-link">
+            </Link>
+            <Link to="/features" className="nav-link">
               Features
-            </a>
-            <a href="#contact" className="nav-link">
+            </Link>
+            <Link to="/contact" className="nav-link">
               Contact
-            </a>
+            </Link>
             <button  onClick={SignIn_btn_clicked} className="navbar-signIn-btn">
               Get Started
             </button>

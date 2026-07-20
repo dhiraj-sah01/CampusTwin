@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 
 //Importing css files
-import "./loginPage.css";
+import "../../Components/main/Main.css";
 
 //Importing Assets
 import Navbar from "../../Components/navbar/navbar";

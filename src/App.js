@@ -1,16 +1,28 @@
+//Importing react components
+import { Routes, Route } from "react-router-dom";
+
 //Importing css files
 import './App.css';
 
 //Importing Pages
-import LoginPage from './pages/loginpage/loginPage';
+import Login from './pages/loginpage/loginPage';
+import Home from './pages/homePage/HomePage';
+import About from './pages/aboutPage/AboutPage';
+import Features from './pages/featuresPage/FeaturesPage';
+import Contact from './pages/contactPage/ContactPage';
 
 
 function App() {
 
   return (
-    <div>
-      <LoginPage />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/signin" element={<Login />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/features" element={<Features />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
+
   );
 }
 
