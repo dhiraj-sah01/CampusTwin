@@ -1,6 +1,8 @@
-import logo from './logo.svg';
+//Importing css files
 import './App.css';
-import LoginPage from './Components/loginPage/loginPage';
+
+//Importing Pages
+import LoginPage from './pages/loginpage/loginPage';
 
 
 function App() {

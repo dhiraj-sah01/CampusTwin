@@ -1,0 +1,136 @@
+.navbar {
+  width: 100%;
+  background: none;
+  position: sticky;
+  z-index: 1000;
+}
+
+.navbar-container {
+
+  max-width: 100%;
+  top: 0;
+  position: sticky;
+  height: 70px;
+  padding: 0 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.logo a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+}
+
+
+
+.nav-link:hover {
+  color: #00d2d3;
+  transition: 0.5s;
+  border-bottom: 2px solid #00d2d3;
+  padding: 5px;
+}
+
+
+.logo-image {
+  padding: 5px 5px;
+  width: auto;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #fffefe;
+  font-weight: 700;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-menu:hover {
+  color: #007bff;
+}
+
+.signup-btn {
+  background: linear-gradient(to right,#00b8b4, #0089b2);
+  color: white !important;
+  padding: 10px 22px;
+  border-radius: 6px;
+}
+
+.signup-btn:hover {
+  background: linear-gradient(to right,#0089b2, #00b8b4);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #333;
+  margin: 5px;
+  transition: 0.3s;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -5px);
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px 0;
+    transition: 0.3s;
+    border-top: 1px solid #eee;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+}
+
+.native-modal{
+    border-radius: 30px;
+    width: 800px;
+    height: 500px;
+    background-color: rgba(23, 22, 22, 0.717);
+    color: #fff;
+}
