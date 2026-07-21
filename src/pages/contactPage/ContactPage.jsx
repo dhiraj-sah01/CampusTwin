@@ -6,7 +6,7 @@ import Navbar from '../../Components/navbar/navbar';
 import Footer from '../../Components/footer/footer';
 
 //Importing css files
-import "../../Components/main/Main.css";
+import "../../Components/css/Main.css";
 
 
 const ContactPage = () => {

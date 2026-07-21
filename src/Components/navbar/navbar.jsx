@@ -1,6 +1,7 @@
 // Importing react components
 import React, {useState, useRef}  from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { getAuth } from "firebase/auth";
 
 //Importing css files
 import './navbar.css'
@@ -8,25 +9,22 @@ import './navbar.css'
 //Importing Assets
 import logo from "../../Assets/logo.png";
 
+//Importing components
+import Navbar_signInBtn from "../Navbar_signInBtn/Navbar_signInBtn";
+
+
 //Importing functions
 import SignIn_btn_clicked from "../../functions/signIn_btn_clicked"
+// import handleLogin from "../../Login";
 
 const Navbar =  () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  
-  // Reference directly targeting the native HTML5 <dialog> element
-  const dialogRef = useRef(null); 
 
-  // Safely displays the native modal view
-  const openModal = (event) => {
-    event.preventDefault(); // Stifles default link jumping/reloading behavior
-    dialogRef.current?.showModal();
-  };
+  //get user info
+  const auth = getAuth();
+  const user = auth.currentUser;
 
-  // Safely terminates the modal view
-  const closeModal = () => {
-    dialogRef.current?.close();
-  };
+
 
   return (
     <div className="navbar-main">
@@ -58,9 +56,15 @@ const Navbar =  () => {
             <Link to="/contact" className="nav-link">
               Contact
             </Link>
-            <button  onClick={SignIn_btn_clicked} className="navbar-signIn-btn">
+            {/* <button  onClick={()=>{
+              if(user){
+                console.log(user.displayName)
+              }
+              SignIn_btn_clicked()
+            }} className="navbar-signIn-btn">
               Get Started
-            </button>
+            </button> */}
+            <Navbar_signInBtn/>
           </nav>
         </div>
       </header>

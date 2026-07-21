@@ -69,24 +69,6 @@
   color: #007bff;
 }
 
-.navbar-signIn-btn {
-  background: linear-gradient(to right,#00b8b4, #0089b2);
-  color: white !important;
-  padding: 10px 22px;
-  border-radius: 10px;
-  cursor: pointer;
-  border: 0;
-  font-weight: 600;
-  transition: all 0.3s ease-in-out; 
-  margin: 10px 10px 10px 0px;
-}
-
-.navbar-signIn-btn:hover {
-  background: linear-gradient(to right,#0089b2, #00b8b4);
-  transform: scale(1.02); 
-  box-shadow: 0 0 6px #080808a6;
-}
-
 
 
 
@@ -135,9 +117,7 @@
     }
 
   }
-  .navbar-signIn-btn{
-    width: 90%;
-  }
+
 
   .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(1px, 7px);
