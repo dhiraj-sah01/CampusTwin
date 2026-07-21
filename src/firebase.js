@@ -2,14 +2,15 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCXaXyP0AwfPw2Zu2I5WE08Y3djugljNj0",
-  authDomain: "campustwin.firebaseapp.com",
-  projectId: "campustwin",
-  storageBucket: "campustwin.firebasestorage.app",
-  messagingSenderId: "143908179014",
-  appId: "1:143908179014:web:23d38a6d8a71d5a0e3ce47",
-  measurementId: "G-RFZYM4H097",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
+console.log(process.env.REACT_APP_FIREBASE_API_KEY);
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
