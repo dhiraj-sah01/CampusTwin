@@ -1,5 +1,6 @@
 // Importing react components
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 //Importing css files
 import "./signUp.css";
@@ -12,9 +13,26 @@ import trackStatus_Icon from "../../Assets/icons8-graph-50.png";
 import betterCampus_Icon from "../../Assets/icons8-protection-50.png";
 
 //Importing functions
-import SignIn_btn_clicked from "../../functions/signIn_btn_clicked"
+import SignIn_btn_clicked from "../../functions/signIn_btn_clicked";
+import HandleDeleteAcc from "../../functions/HandleDeleteAcc";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
+  async function handleLogin() {
+    console.log("HandleLogin called");
+
+    const user = await SignIn_btn_clicked();
+
+    if (user && !user.email.endsWith("@kiit.ac.in")) {
+      alert("Only KIIT email addresses are allowed.");
+      //   await HandleSignOut();
+      await HandleDeleteAcc();
+      return;
+    }
+
+    navigate("/");
+  }
 
   return (
     <div className="SignIn">
@@ -30,7 +48,7 @@ const SignUp = () => {
           </div>
           <h1 id="text-home">Smart Campus.</h1>
           <h1 id="text-home">
-            Smart &nbsp; <span> Maintenance.</span>
+            Smart&nbsp; <span> Maintenance.</span>
           </h1>
           <p id="text-slide1">
             Report issues, track maintenance requests, and manage campus
@@ -71,9 +89,9 @@ const SignUp = () => {
         <div className="welcome-banner">
           <h1>Welcome to CampusTwin </h1>
           <p>Sign in with your college Google account to continue.</p>
-          <button className="signIn-btn" onClick={SignIn_btn_clicked}>
-            <img src={googleIcon} alt="" onClick={SignIn_btn_clicked} />
-            <span onClick={SignIn_btn_clicked}>Continue with Google</span>
+          <button className="signIn-btn" onClick={handleLogin}>
+            <img src={googleIcon} alt=""  />
+            <span >Continue with Google</span>
           </button>
         </div>
       </div>

@@ -5,7 +5,7 @@ import './TechnicianPage.css'
 function TechnicianPage() {
   return (
     <div>
-      
+      this is technician page
     </div>
   )
 }

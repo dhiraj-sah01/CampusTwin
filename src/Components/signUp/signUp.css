@@ -183,6 +183,7 @@ span {
       height: 25px;
       background-color: white;
       border-radius: 50%;
+      pointer-events: none;
     }
     span {
       padding: 5px;
@@ -190,17 +191,60 @@ span {
       font-weight: 500;
       text-align: left;
       width: fit-content;
+      pointer-events: none;
     }
   }
 }
 
 .signIn-btn:hover {
   background-color: #1e88f8;
+  transform: scale(1.01); 
 }
 
 .signIn-btn:active {
-  background-color: #007bff; /* Darker fill when clicked */
-  transform: scale(0.97);    /* Pressed tactile effect */
+  background-color: #007bff; 
+  transform: scale(0.97);    
+}
+
+.nav-link:hover {
+  color: #00d2d3;
+  transition: 0.5s;
+  border-bottom: 2px solid #00d2d3;
+  padding: 5px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #fffefe;
+  font-weight: 700;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-menu:hover {
+  color: #007bff;
+}
+
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #d7d6d6;
+  margin: 5px;
+  transition: 0.5s;
 }
 
 
@@ -310,6 +354,55 @@ span {
       height: 5vh;
     }
   }
+
+  .hamburger {
+    display: block;
+    width: 15%;
+    text-align: left;
+    span{
+      margin-top: 0;
+      height: 4px;
+      width: 20px;
+      margin: 0 2px 2px 2px;
+    }
+
+  }
+
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(1px, 7px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(1.5px, -8px);
+  }
+ 
+  .nav-menu {
+    position: fixed;
+    top: 58px;
+    right: -800px;
+    width: 100%;
+    background: rgba(234, 233, 233, 0.904);
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px 0;
+    transition: 0.3s;
+    border: 1px solid #000000;
+    border-radius: 30px;
+   a{
+    color: #000000;
+    text-align: center;
+   }
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
 }
 
 /* tablet devices */

@@ -9,7 +9,7 @@ import './userPage.css'
 const UserPage = () => {
   return (
     <div>
-      
+      this is user page
     </div>
   );
 }

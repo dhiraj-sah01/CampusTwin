@@ -12,7 +12,9 @@ const AboutPage = () => {
   return (
     <div className='main1'>
       <Navbar/>
-      <div className="main2"></div>
+      <div className="main2">
+        this is about page
+      </div>
       <Footer/>
     </div>
   );

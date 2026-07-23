@@ -6,7 +6,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import "./App.css";
 
 //Importing Pages
-import Login from "./pages/loginpage/loginPage";
+import Login from "./pages/homePage/HomePage";
 import Home from "./pages/homePage/HomePage";
 import About from "./pages/aboutPage/AboutPage";
 import Features from "./pages/featuresPage/FeaturesPage";
