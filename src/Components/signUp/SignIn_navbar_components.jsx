@@ -1,14 +1,20 @@
 import React, {useState, useRef} from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import './signUp.css'
 
-import Navbar_signInBtn from "../Navbar_signInBtn/Navbar_signInBtn";
+
+import GetUser from "../../functions/GetUser";
+import HandleSignOut from "../../functions/handleSignOut";
 
 function SignIn_navbar_components() {
+  // const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState(false);
+    const user = GetUser();
+
   return (
-    <div>
+    <div className="navComponent">
       <div
         className={`hamburger ${menuOpen ? "active" : ""}`}
         onClick={() => setMenuOpen(!menuOpen)}
@@ -28,15 +34,8 @@ function SignIn_navbar_components() {
         <Link to="/contact" className="nav-link">
           Contact
         </Link>
-        {/* <button  onClick={()=>{
-              if(user){
-                console.log(user.displayName)
-              }
-              SignIn_btn_clicked()
-            }} className="navbar-signIn-btn">
-              Get Started
-            </button> */}
-        <Navbar_signInBtn />
+        
+        
       </nav>
     </div>
   );

@@ -24,12 +24,12 @@ const SignUp = () => {
 
     const user = await SignIn_btn_clicked();
 
-    if (user && !user.email.endsWith("@kiit.ac.in")) {
-      alert("Only KIIT email addresses are allowed.");
-      //   await HandleSignOut();
-      await HandleDeleteAcc();
-      return;
-    }
+    // if (user && !user.email.endsWith("@kiit.ac.in")) {
+    //   alert("Only KIIT email addresses are allowed.");
+    //   //   await HandleSignOut();
+    //   await HandleDeleteAcc();
+    //   return;
+    // }
 
     navigate("/");
   }

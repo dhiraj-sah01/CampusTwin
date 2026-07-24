@@ -248,6 +248,9 @@ span {
 }
 
 
+
+
+
 /* Mobile devices */
 @media (max-width: 768px) {
   .slides{
@@ -354,7 +357,9 @@ span {
       height: 5vh;
     }
   }
-
+  .navComponent{
+    display: contents;
+  }
   .hamburger {
     display: block;
     width: 15%;

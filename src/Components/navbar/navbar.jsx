@@ -11,8 +11,8 @@ import logo from "../../Assets/logo.png";
 
 //Importing components
 
-import SignIn_navbar_components from "../signUp/SignIn_navbar_components";
-// import HandleNavbarComponents from "../../functions/HandleNavbarComponents";
+// import SignIn_navbar_components from "../signUp/SignIn_navbar_components";
+import HandleNavbarComponents from "../../functions/HandleNavbarComponents";
 
 
 //Importing functions
@@ -32,8 +32,8 @@ const Navbar =  () => {
               Campus<span>Twin</span>
             </Link>
           </div>
-          {/* <HandleNavbarComponents/> */}
-          <SignIn_navbar_components/>
+          <HandleNavbarComponents/>
+          
         </div>
       </header>
     </div>
