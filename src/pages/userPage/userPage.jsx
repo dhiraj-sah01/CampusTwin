@@ -5,12 +5,15 @@ import React from 'react';
 import './userPage.css'
 import '../../Components/css/Main.css'
 
+import CampusMap from '../../Components/CampusMap/CampusMap';
+
 //Importing Assets
 
 const UserPage = () => {
+  
   return (
     <div>
-        <p>this is user page</p>
+      <CampusMap/>
     </div>
   );
 }

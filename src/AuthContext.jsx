@@ -8,6 +8,13 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Map State
+  const [center, setCenter] = useState([20.35356941099252, 85.81933915604168]);
+
+  function setCenterReceive(coords) {
+    setCenter(coords);
+  }
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -18,7 +25,14 @@ export function AuthProvider({ children }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, loading }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        loading,
+        center,
+        setCenterReceive,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

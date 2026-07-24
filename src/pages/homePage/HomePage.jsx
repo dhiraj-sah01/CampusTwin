@@ -25,7 +25,7 @@ const HomePage = () => {
 
   //checks who have signIn student, teacher or technician.
   if(user){
-    if(user.email.endsWith("@kiit.ac.in")){ //mail check for users
+    if(user.email.endsWith("@gmail.com")){ //mail check for users
       content = <UserPage/>;
     }
     else if(user.email.endsWith("@kiit.admin.ac.in")){//mail check for admins
@@ -34,7 +34,7 @@ const HomePage = () => {
     else if(user.email.endsWith("@kiit.technician.ac.in")){//mail check for technicians
       content = <TechnicianPage/>;
     }
-    navigate("/");
+    // navigate("/");
   }
   else{
     content = <SignUp/>;

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../AuthContext";
 
 import "./userPage.css";
+
 import GetUser from "../../functions/GetUser";
 import HandleSignOut from "../../functions/handleSignOut";
 
@@ -14,6 +16,12 @@ function User_navbar_components() {
   const [campus, setCampus] = useState("");
   const [block, setBlock] = useState("");
   const [classNo, setClassNo] = useState("");
+
+  //for map
+  const { setCenterReceive } = useAuth();
+  const locations = {
+    C25: [20.36435919926926, 85.81697881227231],
+  };
 
   //for userProfile
   const [open, setOpen] = useState(false);
@@ -44,7 +52,15 @@ function User_navbar_components() {
         <nav className={menuOpen ? "nav-menu active" : "nav-menu"}>
           <div className="selectCampus">
             <label for="Campus-select">Choose a Campus:</label>
-            <select value={campus} onChange={(e) => setCampus(e.target.value)}>
+            <select
+              value={campus}
+              onChange={(e) => {
+                const selectedCampus = e.target.value;
+
+                setCampus(selectedCampus);
+                setCenterReceive(locations[selectedCampus]);
+              }}
+            >
               <option value="" disabled hidden>
                 Select Campus
               </option>
@@ -87,13 +103,13 @@ function User_navbar_components() {
           <div className="user-info">
             <button
               className="user-dropdown-btn"
-              onClick={() => setOpen(!open)}
+              onClick={() => {
+                setOpen(!open);
+                console.log(user);
+                console.log(user.photoURL);
+              }}
             >
-              <img
-                src={user.photoURL}
-                alt="Profile"
-                className="profileImg"
-              />
+              <img src={user.photoURL} alt="Profile" className="profileImg" />
               <span>{user.displayName}</span>
             </button>
 

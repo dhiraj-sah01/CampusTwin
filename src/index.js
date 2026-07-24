@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import  { AuthProvider } from "./AuthContext";
+import 'leaflet/dist/leaflet.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const CLIENT_ID = "143908179014-uiofv29ojrp9stkhg7gvf6msp2uh9crq.apps.googleusercontent.com"
