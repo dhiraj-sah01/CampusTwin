@@ -28,6 +28,7 @@ function HandleNavbarComponents() {
   }
   else{
     navContent = <SignIn_navbar_components/>;
+    // navContent = <User_navbar_conponents/>;
   }
 
   return navContent;

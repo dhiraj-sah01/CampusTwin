@@ -153,7 +153,7 @@ span {
   background-repeat: no-repeat;
   color: black;
   background-color: none;
-  font-family: serif ;
+  font-family: serif;
   h1 {
     margin-top: 22vh;
     margin-bottom: 1vh;
@@ -177,7 +177,6 @@ span {
     justify-content: center;
     cursor: pointer;
 
-
     img {
       width: 25px;
       height: 25px;
@@ -198,12 +197,12 @@ span {
 
 .signIn-btn:hover {
   background-color: #1e88f8;
-  transform: scale(1.01); 
+  transform: scale(1.01);
 }
 
 .signIn-btn:active {
-  background-color: #007bff; 
-  transform: scale(0.97);    
+  background-color: #007bff;
+  transform: scale(0.97);
 }
 
 .nav-link:hover {
@@ -213,14 +212,14 @@ span {
   padding: 5px;
 }
 
-.nav-menu {
+.nav-menu-signIn {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 60px;
-  
 }
 
-.nav-menu a {
+.nav-menu-signIn a {
   text-decoration: none;
   color: #fffefe;
   font-weight: 700;
@@ -228,10 +227,9 @@ span {
   transition: 0.3s;
 }
 
-.nav-menu:hover {
+.nav-menu-signIn:hover {
   color: #007bff;
 }
-
 
 .hamburger {
   display: none;
@@ -247,61 +245,56 @@ span {
   transition: 0.5s;
 }
 
-
-
-
-
 /* Mobile devices */
 @media (max-width: 768px) {
-  .slides{
+  .slides {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
     height: 95vh;
   }
-  .slide1{
+  .slide1 {
     width: 250px;
     margin-left: 15px;
     margin-bottom: 6px;
     margin-top: 5vh;
   }
-  #text-slide1{
+  #text-slide1 {
     font-size: small;
     width: 280px;
   }
-  .qoute{
+  .qoute {
     width: 135px;
-    .protection-icon{
+    .protection-icon {
       width: 15px;
       height: 12px;
     }
-    h3{
+    h3 {
       font-size: 0.5rem;
       text-align: left;
     }
   }
-  #text-home{
+  #text-home {
     font-size: x-large;
     height: 30px;
     width: fit-content;
     border-right: 1px;
-    span{
+    span {
       width: fit-content;
       height: fit-content;
     }
   }
 
-  .features-info{
+  .features-info {
     width: fit-content;
     height: max-content;
     margin-top: 15px;
-    ul{
+    ul {
       width: fit-content;
       gap: 2vw;
       margin-left: 0;
       padding-left: 10px;
-
     }
   }
   .feature {
@@ -314,68 +307,69 @@ span {
       padding: 5px;
     }
 
-    #reportIssues_Icon, #trackStatus_Icon, #betterCampus_Icon{
+    #reportIssues_Icon,
+    #trackStatus_Icon,
+    #betterCampus_Icon {
       width: 18px;
       height: 15px;
       border-radius: 50%;
       padding: 5px;
     }
-
-    
   }
   .feature-text {
-      gap: 1vw;
-      text-align: left;
-        h4  {
-          font-size: 0.4rem !important;
-          
-
-        }
-        p {
-          font-size: 0.3rem !important;
-        }
-      }
-  .welcome-banner{
+    gap: 1vw;
+    text-align: left;
+    h4 {
+      font-size: 0.4rem !important;
+    }
+    p {
+      font-size: 0.3rem !important;
+    }
+  }
+  .welcome-banner {
     width: 88vw;
     height: 40vh;
-    background-position: bottom; 
+    background-position: bottom;
     margin-top: 3vh;
-  background-size: cover;      
-  background-repeat: no-repeat;
-  border-radius: 40px;
-    h1{
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 40px;
+    h1 {
       margin-top: 8vh;
       width: auto;
       font-size: large;
     }
-    p{
+    p {
       width: 50vw;
       font-size: x-small;
     }
-    .signIn-btn{
+    .signIn-btn {
       width: 60vw;
       height: 5vh;
     }
   }
-  .navComponent{
+  .navComponent {
     display: contents;
   }
   .hamburger {
     display: block;
     width: 15%;
     text-align: left;
-    span{
+    z-index: 1450;
+    position: absolute;
+    left: 5px;
+    top: 1vh;
+    span {
       margin-top: 0;
-      height: 4px;
-      width: 20px;
+      height: 5px;
+      width: 25px;
       margin: 0 2px 2px 2px;
     }
-
   }
 
-
   .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(1px, 7px);
+    transform: rotate(46deg) translate(2px, 7px);
+    background-color: red;
   }
 
   .hamburger.active span:nth-child(2) {
@@ -383,56 +377,52 @@ span {
   }
 
   .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(1.5px, -8px);
+    transform: rotate(-47deg) translate(2.5px, -7.5px);
+    background-color: red;
   }
- 
-  .nav-menu {
+
+  .nav-menu-signIn {
     position: fixed;
     top: 58px;
     right: -800px;
     width: 100%;
-    background: rgba(234, 233, 233, 0.904);
+    background: rgba(15, 15, 15, 0.751);
     flex-direction: column;
     gap: 25px;
     padding: 30px 0;
     transition: 0.3s;
     border: 1px solid #000000;
-    border-radius: 30px;
-   a{
-    color: #000000;
-    text-align: center;
-   }
+    border-radius: 15px;
+    a {
+      color: #edeaea;
+      text-align: center;
+    }
   }
 
-  .nav-menu.active {
+  .nav-menu-signIn.active {
     left: 0;
   }
-
 }
 
 /* tablet devices */
-@media screen and (min-width: 770px) and (max-width: 990px){
-
-  .slides{
+@media screen and (min-width: 770px) and (max-width: 990px) {
+  .slides {
     gap: 0vw;
     height: 95vh;
   }
-  #text-home{
+  #text-home {
     font-size: 2rem;
-      height: auto;
-
-    
+    height: auto;
   }
-  .welcome-banner{
-    p{
+  .welcome-banner {
+    p {
       width: 250px;
     }
   }
-  .features-info{
+  .features-info {
     width: 50vw;
-    ul{
+    ul {
       gap: 2vw;
     }
   }
-
 }

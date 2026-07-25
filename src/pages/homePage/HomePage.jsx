@@ -38,6 +38,7 @@ const HomePage = () => {
   }
   else{
     content = <SignUp/>;
+    // content = <UserPage/>;
   }
 
   return (

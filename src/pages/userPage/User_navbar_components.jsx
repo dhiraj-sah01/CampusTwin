@@ -10,18 +10,18 @@ import HandleSignOut from "../../functions/handleSignOut";
 function User_navbar_components() {
   const navigate = useNavigate();
 
-  const [menuOpen, setMenuOpen] = useState(false);
+  // const [menuOpen, setMenuOpen] = useState(false);
 
-  //for selections
-  const [campus, setCampus] = useState("");
-  const [block, setBlock] = useState("");
-  const [classNo, setClassNo] = useState("");
+  // //for selections
+  // const [campus, setCampus] = useState("");
+  // const [block, setBlock] = useState("");
+  // const [classNo, setClassNo] = useState("");
 
-  //for map
-  const { setCenterReceive } = useAuth();
-  const locations = {
-    C25: [20.36435919926926, 85.81697881227231],
-  };
+  // //for map
+  // const { setCenterReceive } = useAuth();
+  // const locations = {
+  //   C25: [20.36435919926926, 85.81697881227231],
+  // };
 
   //for userProfile
   const [open, setOpen] = useState(false);
@@ -39,7 +39,7 @@ function User_navbar_components() {
   const user = GetUser();
   return (
     <div>
-      <div className="navComponent">
+      {/* <div className="navComponent">
         <div
           className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -97,7 +97,7 @@ function User_navbar_components() {
               )}
             </select>
           </div>
-        </nav>
+        </nav> */}
 
         <div className="user-dropdown">
           <div className="user-info">
@@ -105,8 +105,8 @@ function User_navbar_components() {
               className="user-dropdown-btn"
               onClick={() => {
                 setOpen(!open);
-                console.log(user);
-                console.log(user.photoURL);
+                // console.log(user);
+                // console.log(user.photoURL);
               }}
             >
               <img src={user.photoURL} alt="Profile" className="profileImg" />
@@ -129,7 +129,7 @@ function User_navbar_components() {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 }
 

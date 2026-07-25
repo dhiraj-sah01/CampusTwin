@@ -6,35 +6,50 @@
 }
 
 .nav-menu {
-  margin-right: 4vw;
+  /* margin-right: 4vw; */
   justify-content: space-between;
+  flex-direction: column;
+  gap: 5vh;
 }
+
 
 .selectCampus {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: left;
+  
   label {
-    font-weight: 500;
-    font-family:  Calibri;
-    color: rgba(255, 255, 255, 0.836);
-    padding-bottom: 2px;
+    font-weight: 800;
+    font-size: larger;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.836);
+    padding-bottom: 5px;
   }
   select {
     width: 100%;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.153);
-    color: white;
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, 0.073);
+    color: rgba(10, 9, 9, 0.68);
     border-radius: 5px;
     height: 4vh;
     outline: none;
+    margin-bottom: 2vh;
+    cursor: pointer;
   }
   select option {
-    background-color: #1e293b;
+    background-color: rgba(25, 102, 225, 0.792);
+    font-weight: 700;
   }
+  /* .colorOption{
+    background-color: #1157c7;
+  } */
 
 }
+/* .navbar-container{
+  background-color: #212020e8;
+} */
 
 /* for navbar components */
 .user-info {
@@ -47,7 +62,7 @@
   span {
     font-size: large;
     padding: 5px;
-    color: rgb(0, 0, 0);
+    color: rgb(197, 194, 194);
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
 
@@ -99,5 +114,119 @@
 
 
 .hello{
-  background-color: #1157c7;
+  background-color: #325b9eb1;
+}
+
+
+
+.UserNavigate_toClass{
+  background-color: rgba(252, 250, 250, 0.861);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 20vw;
+  z-index: 1500;
+  height: fit-content;
+  border-radius: 30px;
+  left: 1vw;
+  /* gap: 2vh; */
+  top:11vh;
+}
+
+
+.blueprintOverlay{
+      width: 100%;
+      height: 83%;
+      justify-content: center;
+      /* background-color: #3498db; */
+      overflow: visible;
+      position: absolute;
+      z-index: 1400;
+      
+      /* Animation Property */
+      animation: easeOutAndFade 3s ease-in 1;
+    }
+
+    /* --- Keyframes Definition --- */
+    @keyframes easeOutAndFade {
+      0% {
+        /* transform: scale(1); */
+        background-color: #74787ed2;
+      }
+      50% {
+        /* transform: scale(1.01); */
+        background-color: #74787e92;
+      }
+      100% {
+        /* transform: scale(1.02); */
+        background-color: #74787e00;
+      }
+    }
+
+
+    /* Mobile devices */
+@media (max-width: 768px) {
+  .navbar-container{
+    padding-right: 10px;
+  }
+.user-dropdown-btn {
+  .profileImg{
+    width: 25px;
+        height: 25px;
+  }
+ span{
+  font-size: medium;
+ }
+}
+
+.UserNavigate_toClass{
+  background-color: transparent;     
+  height: 2vh;
+  width: 4vw;
+  position: fixed;
+  z-index: 1800;
+  top:10vh;
+  left: 0;
+}
+.nav-menu.active{
+  position: fixed;
+  top: 12vh;
+  right: 5px;
+  left: 5px;
+  z-index: 1400;
+  padding: 15px 0;
+  border-radius: 10px;
+  label{
+    color: rgba(5, 5, 5, 0.872);
+  }
+  select{
+    width: 40vw;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.776);
+  }
+  background-color: #edebeba9;
+}
+.nav-menu{
+  position: absolute;
+  right: -800px;
+}
+
+.hamburger_user{
+  /* top: 11vh; */
+  right: 5px;
+  position: fixed;
+  width: fit-content;
+  background-color: transparent;
+  span{
+    background-color: black;
+  }
+}
+
+.blueprintOverlay{
+  z-index: 1200;
+
+}
+
 }

@@ -3,9 +3,14 @@ import "./CampusMap.css";
 import MapCoodinates from "./MapCoodinates";
 import { useAuth } from "../../AuthContext";
 import ChangeView from "./ChangeView";
+import { useEffect, useRef, useState } from "react";
+import { useMap } from "react-leaflet";
+import ZoomCampusMap from "./ZoomCampusMap";
 
 function CampusMap() {
-  const { center } = useAuth();
+  const { center } = useAuth(); 
+  
+const [BuildingCenter, setBuildingCenter] = useState([20.36435919926926, 85.81697881227231]);
 
   //c25
   const c25Coordinates = [
@@ -28,12 +33,20 @@ function CampusMap() {
         style={{ height: "84vh", width: "100%" }}
       >
         <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" />
+        
+        <ZoomCampusMap BuildingCenter={BuildingCenter}/>
+        
         <Polygon
           positions={c25Coordinates}
-          eventHandlers={{ click: () => {console.log("C25 clicked")} }}
+          eventHandlers={{
+            click: () => {
+              console.log("C25 clicked");
+              setBuildingCenter([20.36435919926926, 85.81697881227231]);
+            },
+          }}
           pathOptions={{
-            color: "#2563eb",
-            fillColor: "#3b83f6c1",
+            color: "#151616",
+            fillColor: "#74787ec1",
             fillOpacity: 0.5,
           }}
         >
