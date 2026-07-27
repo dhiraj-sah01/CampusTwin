@@ -3,6 +3,7 @@ import "./CampusMap.css";
 import { useAuth } from "../../AuthContext";
 import ChangeView from "./ChangeView";
 import ZoomCampusMap from "./ZoomCampusMap";
+import VisibleBuildings from "./VisibleBuildings";
 
 
 import Location from "../../Data/Locations";
@@ -63,6 +64,7 @@ function CampusMap({ updateShowBlueprint, setCampus, setBlock }) {
 
         {/* <MapCoodinates /> */}
         <ChangeView center={center} />
+        <VisibleBuildings/>
       </MapContainer>
     </div>
   );
