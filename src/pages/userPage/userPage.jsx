@@ -1,8 +1,6 @@
 // Importing react components
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../AuthContext";
-import { MapContainer } from "react-leaflet";
 
 import Location from "../../Data/Locations";
 
@@ -11,13 +9,11 @@ import "./userPage.css";
 import "../../Components/css/Main.css";
 
 import CampusMap from "../../Components/CampusMap/CampusMap";
-import ZoomCampusMap from "../../Components/CampusMap/ZoomCampusMap";
 // import UserNavigate_toClass from "./UserNavigate_toClass";
 import UserBlueprint from "./UserBlueprint";
 //Importing Assets
 
 const UserPage = () => {
-  const navigate = useNavigate();
 
   const [menuOpen, setMenuOpen] = useState(false);
 

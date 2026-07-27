@@ -1,10 +1,7 @@
 import { MapContainer, TileLayer, Polygon, Tooltip } from "react-leaflet";
 import "./CampusMap.css";
-import MapCoodinates from "./MapCoodinates";
 import { useAuth } from "../../AuthContext";
 import ChangeView from "./ChangeView";
-import { useEffect, useRef, useState } from "react";
-import { useMap } from "react-leaflet";
 import ZoomCampusMap from "./ZoomCampusMap";
 
 
