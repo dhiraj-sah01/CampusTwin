@@ -4,13 +4,16 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../AuthContext";
 import { MapContainer } from "react-leaflet";
 
+import Location from "../../Data/Locations";
+
 //Importing css files
 import "./userPage.css";
 import "../../Components/css/Main.css";
 
 import CampusMap from "../../Components/CampusMap/CampusMap";
+import ZoomCampusMap from "../../Components/CampusMap/ZoomCampusMap";
 // import UserNavigate_toClass from "./UserNavigate_toClass";
-import UserBlueprint from "./UserBlueprint"
+import UserBlueprint from "./UserBlueprint";
 //Importing Assets
 
 const UserPage = () => {
@@ -25,14 +28,10 @@ const UserPage = () => {
 
   //for map
   const { setCenterReceive } = useAuth();
-  const { setzoomCenterReceive } = useAuth();
-  const locations = {
-    C25: [20.36435919926926, 85.81697881227231],
-  };
+  const { setZoomCenterReceive } = useAuth();
 
   //for content
-  const [showInfo, setShowInfo] = useState(true);
-
+  const [showBlueprint, setShowBlueprint] = useState(false);
 
   return (
     <div>
@@ -55,7 +54,7 @@ const UserPage = () => {
               onChange={(e) => {
                 const selectedCampus = e.target.value;
                 setCampus(selectedCampus);
-                setCenterReceive(locations[selectedCampus]);
+                setCenterReceive(Location[selectedCampus]);
               }}
             >
               <option value="" disabled hidden>
@@ -75,8 +74,10 @@ const UserPage = () => {
                   value={block}
                   onChange={(e) => {
                     setBlock(e.target.value);
-                    setShowInfo(false);
-                    setzoomCenterReceive(locations[campus]);
+                    setZoomCenterReceive(Location[campus]);
+                    setTimeout(() => {
+                      setShowBlueprint(true);
+                    }, 2200);
                   }}
                 >
                   <option value="" disabled hidden>
@@ -89,7 +90,7 @@ const UserPage = () => {
                   ) : (
                     <></>
                   )}
-                </select>                
+                </select>
               </>
             )}
           </div>
@@ -121,8 +122,16 @@ const UserPage = () => {
         </nav>
       </div>
 
-
-      {showInfo? <CampusMap /> : <UserBlueprint block={block} />}
+      {/* check either to show blueprint or map */}
+      {showBlueprint ? (
+        <UserBlueprint block={block} />
+      ) : (
+        <CampusMap
+          updateShowBlueprint={setShowBlueprint}
+          setCampus={setCampus}
+          setBlock={setBlock}
+        />
+      )}
     </div>
   );
 };

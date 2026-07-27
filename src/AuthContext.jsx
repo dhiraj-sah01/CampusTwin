@@ -10,9 +10,14 @@ export function AuthProvider({ children }) {
 
   // Map State
   const [center, setCenter] = useState([20.35356941099252, 85.81933915604168]);
+  const [zoomTo, setZoomTo] = useState(null);
 
   function setCenterReceive(coords) {
     setCenter(coords);
+  }
+
+  function setZoomCenterReceive(coords) {
+    setZoomTo(coords);
   }
 
   useEffect(() => {
@@ -31,6 +36,8 @@ export function AuthProvider({ children }) {
         loading,
         center,
         setCenterReceive,
+        zoomTo,
+        setZoomCenterReceive,
       }}
     >
       {children}

@@ -7,10 +7,14 @@ import { useEffect, useRef, useState } from "react";
 import { useMap } from "react-leaflet";
 import ZoomCampusMap from "./ZoomCampusMap";
 
-function CampusMap() {
-  const { center } = useAuth(); 
-  
-const [BuildingCenter, setBuildingCenter] = useState([20.36435919926926, 85.81697881227231]);
+
+import Location from "../../Data/Locations";
+
+function CampusMap({ updateShowBlueprint, setCampus, setBlock }) {
+  const { center } = useAuth();
+  const { setZoomCenterReceive } = useAuth();
+
+  // const [showUserBlueprint, setShowUserBlueprint] = useState(false);
 
   //c25
   const c25Coordinates = [
@@ -24,6 +28,7 @@ const [BuildingCenter, setBuildingCenter] = useState([20.36435919926926, 85.8169
     [20.36373215373193, 85.8163015075263],
   ];
 
+
   // console.log(center);
   return (
     <div className="map">
@@ -33,15 +38,21 @@ const [BuildingCenter, setBuildingCenter] = useState([20.36435919926926, 85.8169
         style={{ height: "84vh", width: "100%" }}
       >
         <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" />
-        
-        <ZoomCampusMap BuildingCenter={BuildingCenter}/>
-        
+
+        <ZoomCampusMap />
+
         <Polygon
           positions={c25Coordinates}
           eventHandlers={{
             click: () => {
               console.log("C25 clicked");
-              setBuildingCenter([20.36435919926926, 85.81697881227231]);
+              setZoomCenterReceive(Location["C25"]);
+              console.log(center);
+              setCampus("C25");
+              setBlock("A");
+              setTimeout(() => {
+                updateShowBlueprint(true);
+              }, 2200);
             },
           }}
           pathOptions={{
@@ -54,7 +65,6 @@ const [BuildingCenter, setBuildingCenter] = useState([20.36435919926926, 85.8169
         </Polygon>
 
         {/* <MapCoodinates /> */}
-
         <ChangeView center={center} />
       </MapContainer>
     </div>
