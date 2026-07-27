@@ -1,5 +1,5 @@
 import { useAuth } from "../AuthContext";
-import React from "react";
+
 
 function GetUser() {
   //get user status

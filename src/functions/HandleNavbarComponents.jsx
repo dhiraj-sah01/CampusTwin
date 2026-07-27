@@ -6,10 +6,10 @@ import GetUser from "../functions/GetUser";
 //Importing component
 
 
-import SignIn_navbar_components from "../Components/signUp/SignIn_navbar_components";
-import User_navbar_conponents from '../pages/userPage/User_navbar_components';
-import Admin_navbar_components from '../pages/AdminPage/Admin_navbar_components';
-import Technician_navbar_components from "../pages/TechnicianPage/Technician_navbar_components";
+import SignInNavbarComponents from "../Components/signUp/SignIn_navbar_components";
+import UserNavbarConponents from '../pages/userPage/User_navbar_components';
+import AdminNavbarComponents from '../pages/AdminPage/Admin_navbar_components';
+import TechnicianNavbarComponents from "../pages/TechnicianPage/Technician_navbar_components";
 
 function HandleNavbarComponents() {
   const user = GetUser();
@@ -17,17 +17,17 @@ function HandleNavbarComponents() {
   let navContent;
   if(user){
     if(user.email.endsWith("@gmail.com")){ //mail check for users
-      navContent = <User_navbar_conponents/>;
+      navContent = <UserNavbarConponents/>;
     }
     else if(user.email.endsWith("@kiit.admin.ac.in")){//mail check for admins
-      navContent = <Admin_navbar_components/>;
+      navContent = <AdminNavbarComponents/>;
     }
     else if(user.email.endsWith("@kiit.technician.ac.in")){//mail check for technicians
-      navContent = <Technician_navbar_components/>;
+      navContent = <TechnicianNavbarComponents/>;
     }
   }
   else{
-    navContent = <SignIn_navbar_components/>;
+    navContent = <SignInNavbarComponents/>;
     // navContent = <User_navbar_conponents/>;
   }
 

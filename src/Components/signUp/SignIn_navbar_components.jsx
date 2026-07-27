@@ -1,17 +1,12 @@
-import React, {useState, useRef} from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+
 
 import './signUp.css'
 
 
-import GetUser from "../../functions/GetUser";
-import HandleSignOut from "../../functions/handleSignOut";
-
 function SignIn_navbar_components() {
-  // const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState(false);
-    const user = GetUser();
 
   return (
     <div className="navComponent">

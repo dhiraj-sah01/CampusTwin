@@ -1,6 +1,6 @@
 //Importing react components
 import React from 'react'
-import { useNavigate } from "react-router-dom";
+
 
 //Importing a function
 import GetUser from '../../functions/GetUser';
@@ -18,7 +18,6 @@ import SignUp from '../../Components/signUp/signUp';
 import "../../Components/css/Main.css";
 
 const HomePage = () => {
-  const navigate = useNavigate();
 
   let content;
   const user = GetUser();

@@ -14,7 +14,7 @@ import betterCampus_Icon from "../../Assets/icons8-protection-50.png";
 
 //Importing functions
 import SignIn_btn_clicked from "../../functions/signIn_btn_clicked";
-import HandleDeleteAcc from "../../functions/HandleDeleteAcc";
+// import HandleDeleteAcc from "../../functions/HandleDeleteAcc";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const SignUp = () => {
   async function handleLogin() {
     console.log("HandleLogin called");
 
-    const user = await SignIn_btn_clicked();
+    // const user = await SignIn_btn_clicked();
 
     // if (user && !user.email.endsWith("@kiit.ac.in")) {
     //   alert("Only KIIT email addresses are allowed.");
