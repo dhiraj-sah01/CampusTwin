@@ -91,6 +91,7 @@ span {
   height: auto;
   background-color: rgba(35, 42, 42, 0.507);
   border-radius: 35px;
+ 
 
   ul {
     display: flex;
@@ -98,6 +99,7 @@ span {
     gap: 4vw;
     margin: 8px;
     border-left: #333;
+    list-style: none;
   }
   .feature {
     display: flex;
@@ -231,12 +233,12 @@ span {
   color: #007bff;
 }
 
-.hamburger {
+.hamburger_signIn {
   display: none;
   cursor: pointer;
 }
 
-.hamburger span {
+.hamburger_signIn span {
   display: block;
   width: 26px;
   height: 3px;
@@ -351,14 +353,14 @@ span {
   .navComponent {
     display: contents;
   }
-  .hamburger {
+  .hamburger_signIn {
     display: block;
-    width: 15%;
+    width: 10%;
     text-align: left;
     z-index: 1450;
-    position: absolute;
-    left: 5px;
-    top: 1vh;
+    /* position: absolute; */
+    /* right: 5px;
+    top: 2.5vh; */
     span {
       margin-top: 0;
       height: 5px;
@@ -367,16 +369,16 @@ span {
     }
   }
 
-  .hamburger.active span:nth-child(1) {
+  .hamburger_signIn.active span:nth-child(1) {
     transform: rotate(46deg) translate(2px, 7px);
     background-color: red;
   }
 
-  .hamburger.active span:nth-child(2) {
+  .hamburger_signIn.active span:nth-child(2) {
     opacity: 0;
   }
 
-  .hamburger.active span:nth-child(3) {
+  .hamburger_signIn.active span:nth-child(3) {
     transform: rotate(-47deg) translate(2.5px, -7.5px);
     background-color: red;
   }

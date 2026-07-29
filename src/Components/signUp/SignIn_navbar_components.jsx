@@ -11,7 +11,7 @@ function SignIn_navbar_components() {
   return (
     <div className="navComponent">
       <div
-        className={`hamburger_user hamburger  ${menuOpen ? "active" : ""}`}
+        className={`hamburger_signIn  ${menuOpen ? "active" : ""}`}
         onClick={() => setMenuOpen(!menuOpen)}
       >
         <span></span>

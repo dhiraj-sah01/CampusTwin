@@ -5,8 +5,8 @@ import ChangeView from "./ChangeView";
 import ZoomCampusMap from "./ZoomCampusMap";
 import VisibleBuildings from "./VisibleBuildings";
 
-
 import Location from "../../Data/Locations";
+import { useState, useEffect } from "react";
 
 function CampusMap({ updateShowBlueprint, setCampus, setBlock }) {
   const { center } = useAuth();
@@ -26,6 +26,12 @@ function CampusMap({ updateShowBlueprint, setCampus, setBlock }) {
     [20.36373215373193, 85.8163015075263],
   ];
 
+  const [visiableBuildings, setVisiableBuildings] = useState("");
+  useEffect(() => {
+    if (visiableBuildings) {
+      setCampus(visiableBuildings);
+    }
+  }, [visiableBuildings]);
 
   // console.log(center);
   return (
@@ -46,7 +52,7 @@ function CampusMap({ updateShowBlueprint, setCampus, setBlock }) {
               console.log("C25 clicked");
               setZoomCenterReceive(Location["C25"]);
               console.log(center);
-              setCampus("C25");
+              // setCampus("C25");
               setBlock("A");
               setTimeout(() => {
                 updateShowBlueprint(true);
@@ -64,7 +70,7 @@ function CampusMap({ updateShowBlueprint, setCampus, setBlock }) {
 
         {/* <MapCoodinates /> */}
         <ChangeView center={center} />
-        <VisibleBuildings/>
+        <VisibleBuildings setVisiableBuildings={setVisiableBuildings} />
       </MapContainer>
     </div>
   );

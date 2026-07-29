@@ -7,7 +7,7 @@ export default function ZoomCampusMap() {
   const { zoomTo } = useAuth(); 
 
   useEffect(() => {
-    console.log(zoomTo);
+
     if (!zoomTo) return;
     map.flyTo(zoomTo, 22, {
       animate: true,

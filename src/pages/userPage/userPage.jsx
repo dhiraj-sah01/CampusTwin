@@ -34,7 +34,7 @@ const UserPage = () => {
       {/* <UserNavigate_toClass/> */}
       <div className="UserNavigate_toClass">
         <div
-          className={`hamburger ${menuOpen ? "active" : ""}`}
+          className={`hamburger_user ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <span></span>
@@ -44,7 +44,7 @@ const UserPage = () => {
 
         <nav className={menuOpen ? "nav-menu active" : "nav-menu"}>
           <div className="selectCampus">
-            <label for="Campus-select">Choose a Campus:</label>
+            <label htmlFor="Campus-select">Choose a Campus:</label>
             <select
               value={campus}
               onChange={(e) => {
@@ -65,7 +65,7 @@ const UserPage = () => {
           <div className="selectCampus">
             {campus && (
               <>
-                <label for="Block-select">Choose a Block no.:</label>
+                <label htmlFor="Block-select">Choose a Block no.:</label>
                 <select
                   value={block}
                   onChange={(e) => {
@@ -94,7 +94,7 @@ const UserPage = () => {
           <div className="selectCampus">
             {block && (
               <>
-                <label for="Class-select">Choose a Class no.:</label>
+                <label htmlFor="Class-select">Choose a Class no.:</label>
                 <select
                   value={classNo}
                   onChange={(e) => setClassNo(e.target.value)}

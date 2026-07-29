@@ -25,13 +25,16 @@ function User_navbar_components() {
 
   //for userProfile
   const [open, setOpen] = useState(false);
-  const userOptions = ["History", "LogOut"];
+  const userOptions = ["Issues Raised", "LogOut"];
 
   //handle options of user
   const handleSelect = (option) => {
     if (option === "LogOut") {
       HandleSignOut();
       navigate("/");
+    }
+    if(option === "Issues Raised"){
+      navigate("/issues")
     }
     setOpen(false);
   };

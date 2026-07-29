@@ -20,19 +20,20 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   async function handleLogin() {
-    console.log("HandleLogin called");
+    try {
+      const user = await SignIn_btn_clicked();
+      // console.log(user);
 
-    const user = await SignIn_btn_clicked();
-    console.log(user);
-
-    // if (user && !user.email.endsWith("@kiit.ac.in")) {
-    //   alert("Only KIIT email addresses are allowed.");
-    //   //   await HandleSignOut();
-    //   await HandleDeleteAcc();
-    //   return;
-    // }
-
-    navigate("/");
+      // if (user && !user.email.endsWith("@kiit.ac.in")) {
+      //   alert("Only KIIT email addresses are allowed.");
+      //   //   await HandleSignOut();
+      //   await HandleDeleteAcc();
+      //   return;
+      // }
+      navigate("/");
+    } catch (err) {
+      // console.log(err);
+    }
   }
 
   return (
@@ -91,8 +92,8 @@ const SignUp = () => {
           <h1>Welcome to CampusTwin </h1>
           <p>Sign in with your college Google account to continue.</p>
           <button className="signIn-btn" onClick={handleLogin}>
-            <img src={googleIcon} alt=""  />
-            <span >Continue with Google</span>
+            <img src={googleIcon} alt="" />
+            <span>Continue with Google</span>
           </button>
         </div>
       </div>

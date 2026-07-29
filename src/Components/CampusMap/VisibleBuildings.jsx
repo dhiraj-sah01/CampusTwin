@@ -1,7 +1,7 @@
 import { useMapEvents } from "react-leaflet";
 import Location from "../../Data/Locations";
 
-function VisibleBuildings() {
+function VisibleBuildings({setVisiableBuildings}) {
 
   useMapEvents({
     moveend(e) {
@@ -10,7 +10,10 @@ function VisibleBuildings() {
 
       Object.entries(Location).forEach(([name, coords]) => {
         if (bounds.contains(coords)) {
-          console.log(`${name} is visible`);
+          // console.log(`${name} is visible`);
+          setVisiableBuildings(name);
+        }else{
+          // setVisiableCampus("");
         }
       });
     },
