@@ -22,7 +22,7 @@ const SignUp = () => {
   async function handleLogin() {
     try {
       const user = await SignIn_btn_clicked();
-      // console.log(user);
+      console.log(user);
 
       // if (user && !user.email.endsWith("@kiit.ac.in")) {
       //   alert("Only KIIT email addresses are allowed.");

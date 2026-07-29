@@ -31,7 +31,7 @@ function CampusMap({ updateShowBlueprint, setCampus, setBlock }) {
     if (visiableBuildings) {
       setCampus(visiableBuildings);
     }
-  }, [visiableBuildings]);
+  }, [visiableBuildings, setCampus]);
 
   // console.log(center);
   return (
