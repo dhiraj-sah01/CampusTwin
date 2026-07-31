@@ -1,7 +1,52 @@
 
-
+.history{
+    padding: 2vw;
+    align-items: center;
+}
 
 
 .issuesBox{
-    background-color: red;
+    background-color: rgba(239, 233, 233, 0.525);
+    width: 18vw;
+    padding: 1vw;
+    text-align: center;
+    border-radius: 12%;    
+
+    /* Image */
+    img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    /* Reported on date and time */
+    .reportedOn, .classRoom, .techncianAssigned, .priorityLevel, .issueStatus, .description{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size:small;
+        p{
+            font-weight: 750;
+        }
+        span{
+            color: black;
+            padding-left: 5px;
+        }
+    }
+
+    /* Status */
+    .issueStatus{
+        background-color: orange;
+        justify-content: center;
+        font-weight: 1000;
+        border-radius: 20px;
+        width: auto ;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .issuesBox{
+        width: 90%;
+    }
 }

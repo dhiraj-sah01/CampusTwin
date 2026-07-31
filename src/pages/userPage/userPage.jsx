@@ -13,6 +13,7 @@ import CampusMap from "../../Components/CampusMap/CampusMap";
 import UserBlueprint from "./UserBlueprint";
 //Importing Assets
 
+
 const UserPage = () => {
 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,6 +29,8 @@ const UserPage = () => {
 
   //for content
   const [showBlueprint, setShowBlueprint] = useState(false);
+
+  
 
   return (
     <div>
