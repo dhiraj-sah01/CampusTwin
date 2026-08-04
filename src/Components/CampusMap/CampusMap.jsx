@@ -5,12 +5,21 @@ import ChangeView from "./ChangeView";
 import ZoomCampusMap from "./ZoomCampusMap";
 import VisibleBuildings from "./VisibleBuildings";
 
+import axios from "axios";
+
 import Location from "../../Data/Locations";
 import { useState, useEffect } from "react";
 
 function CampusMap({ updateShowBlueprint, setCampus, setBlock }) {
   const { center } = useAuth();
   const { setZoomCenterReceive } = useAuth();
+
+  // const [buildings, setBuildings] = useState([]);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000/api/buildings?name=C25")
+  //     .then((res) => setBuildings(res.data));
+  // }, []);
 
   // const [showUserBlueprint, setShowUserBlueprint] = useState(false);
 
@@ -25,6 +34,8 @@ function CampusMap({ updateShowBlueprint, setCampus, setBlock }) {
     [20.36418299587854, 85.81623746574644],
     [20.36373215373193, 85.8163015075263],
   ];
+
+  
 
   const [visiableBuildings, setVisiableBuildings] = useState("");
   useEffect(() => {
@@ -44,9 +55,10 @@ function CampusMap({ updateShowBlueprint, setCampus, setBlock }) {
         <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" />
 
         <ZoomCampusMap />
-
+        {/* {console.log(buildings)} */}
         <Polygon
           positions={c25Coordinates}
+          // positions={buildings.coordinates}
           eventHandlers={{
             click: () => {
               console.log("C25 clicked");
