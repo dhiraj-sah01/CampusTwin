@@ -5,7 +5,7 @@ import ChangeView from "./ChangeView";
 import ZoomCampusMap from "./ZoomCampusMap";
 import VisibleBuildings from "./VisibleBuildings";
 
-import axios from "axios";
+// import axios from "axios";
 
 import Location from "../../Data/Locations";
 import { useState, useEffect } from "react";
