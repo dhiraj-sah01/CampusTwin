@@ -11,6 +11,8 @@ import "../../Components/css/Main.css";
 import CampusMap from "../../Components/CampusMap/CampusMap";
 // import UserNavigate_toClass from "./UserNavigate_toClass";
 import UserBlueprint from "./UserBlueprint";
+
+import ModelViewer from "../../Components/3DModel/ModelViewer";
 //Importing Assets
 
 
@@ -29,6 +31,7 @@ const UserPage = () => {
 
   //for content
   const [showBlueprint, setShowBlueprint] = useState(false);
+  // const [show3DModel, setShow3DModel] = useState(false);
 
   
 
@@ -100,14 +103,17 @@ const UserPage = () => {
                 <label htmlFor="Class-select">Choose a Class no.:</label>
                 <select
                   value={classNo}
-                  onChange={(e) => setClassNo(e.target.value)}
+                  onChange={(e) => {
+                    setClassNo(e.target.value)
+                    console.log("Selected Class:", e.target.value);
+                  }}
                 >
                   <option value="" disabled hidden>
                     Select Class
                   </option>
                   {campus === "C25" && block === "A" ? (
                     Array.from({ length: 18 }, (_, i) => (
-                      <option key={i + 1} value={`A${i + 1}`} id="colorOption">
+                      <option key={i + 1} value={i < 9 ? `A00${i + 1}` : `A0${i + 1}`} id="colorOption">
                         {i < 9 ? `A 00${i + 1}` : `A 0${i + 1}`}
                       </option>
                     ))
@@ -121,9 +127,20 @@ const UserPage = () => {
         </nav>
       </div>
 
+      <div className="model-viewer-container" style={{ visibility: classNo ? "visible" : "hidden"}}>
+        <ModelViewer />
+        <div className="model-viewer-text">
+          <h2>{classNo} : 3D Classroom Model</h2>
+          <p>
+            Explore the 3D model of the classroom to get a better understanding
+            of its layout and design.
+          </p>
+        </div>
+      </div>
+
       {/* check either to show blueprint or map */}
       {showBlueprint ? (
-        <UserBlueprint block={block} />
+        <UserBlueprint block={block} setClassNo={setClassNo} />
       ) : (
         <CampusMap
           updateShowBlueprint={setShowBlueprint}
@@ -131,6 +148,7 @@ const UserPage = () => {
           setBlock={setBlock}
         />
       )}
+      {/* {classNo && <ModelViewer />} */}
     </div>
   );
 };
