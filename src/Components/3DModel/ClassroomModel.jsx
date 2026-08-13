@@ -13,6 +13,11 @@ export default function ClassroomModel() {
   return (
     <primitive
       object={scene}
+      onClick={(e) => {
+        e.stopPropagation();
+
+        console.log("Clicked:", e.object.name);
+      }}
       scale={1}
       position={[0, 0, 0]}
     />

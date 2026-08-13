@@ -9,7 +9,7 @@ export default function ModelViewer() {
       {console.log("ModelViewer component rendered")}
       <Canvas camera={{ position: [-90, 30, 50], fov: 100 }}>
         <ambientLight intensity={1} />
-        <directionalLight position={[5, 10, 5]} intensity={1} />
+        <directionalLight position={[5, 10, 5]} intensity={0.5} />
 
         <ClassroomModel />
 
