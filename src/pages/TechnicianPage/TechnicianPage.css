@@ -1,5 +1,5 @@
 .technician-page-container {
-  background-color: #d20a0a;
+  background-color: #171616b6;
   border-radius: 10px;
   height: 90%;
   margin: 1vh 1vw;
@@ -12,7 +12,7 @@
   /* padding: 1vw; */
   position: sticky;
   font-weight: bold;
-  background-color: #858078;
+  background-color: #8f897fb9;
   border-radius: 10px 10px 0px 0px;
   /* width: 96%; */
   ul {
@@ -41,80 +41,123 @@
         border-bottom: 2px solid #050505;
       }
     }
-
   }
 }
 
 .status-count {
-      background-color: #f0ad4e;
-      color: #fff;
-      border-radius: 50%;
-      text-align: center;
-      padding-top: 2px;
-      width: 18px;
-      height: 16px;
-      font-size: 0.8rem;
+  background-color: #f0ad4e;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 2px;
+  width: 18px;
+  height: 16px;
+  font-size: 0.8rem;
 }
 
 .issues-cards-technicianPage {
-    overflow-y: auto;
-    padding: 1vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1vw;
+  display: flex;
+  gap: 1vw;
+  flex-wrap: wrap;
+}
+
+.issuesBox-technicianPage {
+  background-color: rgba(239, 233, 233, 0.525);
+  width: 18vw;
+  padding: 2vw;
+  text-align: center;
+  border-radius: 30px;
+  cursor: pointer;
+  gap: 10px;
+
+  /* Image */
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  /* Reported on date and time */
+  .reportedOn,
+  .classRoom,
+  .techncianAssigned,
+  .priorityLevel,
+  .issueStatus,
+  .description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: small;
+    p {
+      font-weight: 750;
+      pointer-events: none;
+    }
+    span {
+      color: black;
+      padding-left: 5px;
+      pointer-events: none;
+    }
+  }
+
+  /* Status */
+  .issueStatus {
+    background-color: orange;
+    justify-content: center;
+    font-weight: 1000;
+    border-radius: 20px;
+    width: 100%;
+    pointer-events: none;
+  }
+}
+
+.issuesBox-technicianPage:hover {
+  transform: scale(1.02);
 }
 
 
-
-
-
-
-.issuesBox-technicianPage{
-    background-color: rgba(239, 233, 233, 0.525);
-    width: 18vw;
-    padding: 2vw;
-    text-align: center;
-    border-radius: 30px;    
-    
-
-    /* Image */
-    img{
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-    }
-
-    /* Reported on date and time */
-    .reportedOn, .classRoom, .techncianAssigned, .priorityLevel, .issueStatus, .description{
+.details-container{
+    position: absolute;
+    left: 5vw;
+    right: 5vw;
+    top: 11vh;
+    bottom: 8vh;
+    background-color: #050505;
+    border-radius: 20px;
+    /* display: flex; */
+    .close-container{
+        background-color: #302d2dd3;
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        font-size:small;
-        p{
-            font-weight: 750;
-        }
-        span{
-            color: black;
-            padding-left: 5px;
-        }
+        justify-content: flex-end;
+        border-radius: 20px 20px 0 0;
+        padding: 0.2vw;
+    }
+    .closebtn{
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-left: #fff 1px solid;
     }
 
-    /* Status */
-    .issueStatus{
-        background-color: orange;
-        justify-content: center;
-        font-weight: 1000;
-        border-radius: 20px;
-        width: 100%;
-    }
 }
 
 /* Mobile devices */
 @media (max-width: 768px) {
-    .issuesCards-technicianPage {
-        overflow-x: none;
-    }
-    .issuesBox-technicianPage{
-        width: calc(100% - 4vw);
-    }
-    .reportedOn, .classRoom, .techncianAssigned, .priorityLevel, .issueStatus, .description{
-        justify-content: center;
-     }
+  .issuesCards-technicianPage {
+    overflow-x: none;
+  }
+  .issuesBox-technicianPage {
+    width: calc(100% - 4vw);
+  }
+  .reportedOn,
+  .classRoom,
+  .techncianAssigned,
+  .priorityLevel,
+  .issueStatus,
+  .description {
+    justify-content: center;
+  }
 }

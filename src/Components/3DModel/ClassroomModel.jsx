@@ -1,14 +1,14 @@
 import { useGLTF } from "@react-three/drei";
-import model from "../../Assets/models/Classroom3D.glb";
+import model from "../../Assets/models/classroom2.glb";
 
 export default function ClassroomModel() {
   const { scene } = useGLTF(model);
 
-//   scene.traverse((child) => {
-//   if (child.isMesh) {
-//     console.log(child.name);
-//   }
-// });
+  //   scene.traverse((child) => {
+  //   if (child.isMesh) {
+  //     console.log(child.name);
+  //   }
+  // });
 
   return (
     <primitive
@@ -16,7 +16,8 @@ export default function ClassroomModel() {
       onClick={(e) => {
         e.stopPropagation();
 
-        console.log("Clicked:", e.object.name);
+        const parent = e.object.parent;
+        console.log("Parent:", parent?.name);
       }}
       scale={1}
       position={[0, 0, 0]}

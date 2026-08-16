@@ -15,6 +15,7 @@ import TechnicianPage from '../TechnicianPage/TechnicianPage';
 import SignUp from '../../Components/signUp/signUp';
 
 
+
 //Importing css files
 import "../../Components/css/Main.css";
 
@@ -25,13 +26,14 @@ const HomePage = () => {
 
   //checks who have signIn student, teacher or technician.
   if(user){
-    if(user.email.endsWith("@gmail.com")){ //mail check for users
+    if(user.email.endsWith("@kiit.technician.ac.in")){ //mail check for users
       content = <UserPage/>;
+
     }
     else if(user.email.endsWith("@kiit.admin.ac.in")){//mail check for admins
       content = <AdminPage/>;
     }
-    else if(user.email.endsWith("@kiit.technician.ac.in")){//mail check for technicians
+    else if(user.email.endsWith("@gmail.com")){//mail check for technicians
       content = <TechnicianPage/>;
     }
     // navigate("/");
