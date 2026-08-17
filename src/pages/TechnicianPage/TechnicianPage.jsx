@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import { useEffect } from "react";
 
 import "./TechnicianPage.css";
 
@@ -12,22 +11,11 @@ function TechnicianPage() {
 
   const [showDetails, setShowDetails] = useState(false);
 
-  // const [activePopup, setActivePopup] = useState(null);
-
-  // useEffect(() => {
-  //   const closePopup = (e) => {
-  //     if (!e.target.closest(".showDetails")) {
-  //       setActivePopup(null);
-  //     }
-  //   };
-
-  //   document.addEventListener("click", closePopup);
-
-  //   return () => document.removeEventListener("click", closePopup);
-  // }, []);
 
   return (
+    <div>
     <div className="technician-page-container">
+      
       <div className="status-info">
         <ul>
           <li>Pending</li>
@@ -103,8 +91,8 @@ function TechnicianPage() {
           </div>
         </div> */}
       </div>
+      </div>
       {showDetails && <div className="showDetails"><DetailsOfIssues setShowDetails={setShowDetails} /></div>}
-      {console.log(showDetails)}
     </div>
   );
 }

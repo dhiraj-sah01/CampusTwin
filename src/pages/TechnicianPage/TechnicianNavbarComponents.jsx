@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 // import { useAuth } from "../../AuthContext";
 
 import "../userPage/userPage.css";
+import "./TechnicianPage.css"
 
 import GetUser from "../../functions/GetUser";
 import HandleSignOut from "../../functions/handleSignOut";
+
 
 function User_navbar_components() {
   const navigate = useNavigate();
@@ -41,7 +43,8 @@ function User_navbar_components() {
 
   const user = GetUser();
   return (
-    <div>
+    <div className="navbar-rightContainer">
+      <div className="rating">⭐<span>4.5</span></div>
         <div className="user-dropdown">
           <div className="user-info">
             <button
@@ -52,7 +55,7 @@ function User_navbar_components() {
                 // console.log(user.photoURL);
               }}
             >
-              <img src={user.photoURL} alt="Profile" className="profileImg" />
+              <img src={user.photoURL} alt="Profile" className="profileImg"/>
               <span>{user.displayName}</span>
             </button>
 

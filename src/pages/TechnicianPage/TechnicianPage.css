@@ -1,7 +1,25 @@
+.navbar-rightContainer{
+  display: flex;
+  gap: 1.5vw;
+  align-items: center;
+
+  .rating{
+    background-color: #777272e1;
+    padding: 0.5vw;
+    padding-right: 1vw;
+    border-radius: 20px;
+    span{
+      color: rgb(138, 189, 28);
+      font-weight: 600;
+    }
+  }
+}
+
+
 .technician-page-container {
   background-color: #171616b6;
   border-radius: 10px;
-  height: 90%;
+  height: 81vh;
   margin: 1vh 1vw;
   display: flex;
   flex-direction: column;
@@ -73,6 +91,7 @@
   cursor: pointer;
   gap: 10px;
 
+
   /* Image */
   img {
     width: 50px;
@@ -119,15 +138,30 @@
 }
 
 
+.details-container-bg{
+  width: 100vw;
+  height: 100vh;
+  background-color: #06060605;
+  /* margin: -1vh -1vw; */
+  z-index: 700;
+  position: absolute;
+  overflow: visible;
+  /* cursor: pointer; */
+  top: 0;
+}
+
 .details-container{
     position: absolute;
-    left: 5vw;
-    right: 5vw;
+    left: 10vw;
+    right: 10vw;
     top: 11vh;
     bottom: 8vh;
+    z-index: 800;
     background-color: #050505;
     border-radius: 20px;
-    /* display: flex; */
+    display: flex;
+    flex-direction: column;
+
     .close-container{
         background-color: #302d2dd3;
         display: flex;
@@ -139,16 +173,66 @@
         border: none;
         color: white;
         cursor: pointer;
-        border-left: #fff 1px solid;
+
     }
 
 }
 
+.issue-detail{
+  background-color: #161411;
+  width: 25vw;
+  padding: 2vw;
+  text-align: center;
+  /* height: max-content; */
+  gap: 10px;
+  flex-grow: 1; 
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Image */
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+    .reportedOn,
+  .classRoom,
+  .techncianAssigned,
+  .priorityLevel,
+  .issueStatus,
+  .description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: small;
+    justify-content: center;
+  }
+  p{
+    font-weight: 750;
+    color: #fff;
+    pointer-events: none;
+  }
+  span{
+    color: #f0ad4e;
+    padding-left: 5px;
+    pointer-events: none;
+  }
+}
+
 /* Mobile devices */
 @media (max-width: 768px) {
+  .technician-page-container {
+    height: 84vh;
+  }
   .issuesCards-technicianPage {
     overflow-x: none;
   }
+  
   .issuesBox-technicianPage {
     width: calc(100% - 4vw);
   }
