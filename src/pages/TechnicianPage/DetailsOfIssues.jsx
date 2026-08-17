@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./TechnicianPage.css";
-import { div } from "three/tsl";
+
 
 function DetailsOfIssues({ setShowDetails }){
   return (
