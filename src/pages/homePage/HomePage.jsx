@@ -3,7 +3,7 @@ import React from 'react'
 
 
 //Importing a function
-import GetUser from '../../functions/GetUser';
+import GetUserType from '../../functions/GetUserType';
 
 //Importing components
 import Navbar from '../../Components/navbar/navbar';
@@ -19,21 +19,22 @@ import SignUp from '../../Components/signUp/signUp';
 //Importing css files
 import "../../Components/css/Main.css";
 
+
 const HomePage = () => {
 
   let content;
-  const user = GetUser();
+  const userType = GetUserType();
 
   //checks who have signIn student, teacher or technician.
-  if(user){
-    if(user.email.endsWith("@kiit.technician.ac.in")){ //mail check for users
+  if(userType){
+    if(userType === "user"){ //mail check for users
       content = <UserPage/>;
 
     }
-    else if(user.email.endsWith("@kiit.admin.ac.in")){//mail check for admins
+    else if(userType === "admin"){//mail check for admins
       content = <AdminPage/>;
     }
-    else if(user.email.endsWith("@gmail.com")){//mail check for technicians
+    else if(userType === "technician"){//mail check for technicians
       content = <TechnicianPage/>;
     }
     // navigate("/");

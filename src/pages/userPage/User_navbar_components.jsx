@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import { useAuth } from "../../AuthContext";
 
@@ -33,13 +33,29 @@ function User_navbar_components() {
       HandleSignOut();
       navigate("/");
     }
-    if(option === "Issues Raised"){
-      navigate("/issues")
+    if (option === "Issues Raised") {
+      navigate("/issues");
     }
     setOpen(false);
   };
 
   const user = GetUser();
+
+  //to hide popup if clicked outside the div
+  useEffect(() => {
+    const handleClick = (e) => {
+      if (!e.target.closest(".user-dropdown")) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, []);
+
   return (
     <div>
       {/* <div className="navComponent">
@@ -102,36 +118,36 @@ function User_navbar_components() {
           </div>
         </nav> */}
 
-        <div className="user-dropdown">
-          <div className="user-info">
-            <button
-              className="user-dropdown-btn"
-              onClick={() => {
-                setOpen(!open);
-                // console.log(user);
-                // console.log(user.photoURL);
-              }}
-            >
-              <img src={user.photoURL} alt="Profile" className="profileImg" />
-              <span>{user.displayName}</span>
-            </button>
+      <div className="user-dropdown">
+        <div className="user-info">
+          <button
+            className="user-dropdown-btn"
+            onClick={() => {
+              setOpen(!open);
+              // console.log(user);
+              // console.log(user.photoURL);
+            }}
+          >
+            <img src={user.photoURL} alt="Profile" className="profileImg" />
+            <span>{user.displayName}</span>
+          </button>
 
-            {open && (
-              <div className="user-dropdown-menu">
-                {userOptions.map((option) => (
-                  <div
-                    key={option}
-                    className="user-dropdown-item"
-                    onClick={() => handleSelect(option)}
-                  >
-                    {option}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+          {open && (
+            <div className="user-dropdown-menu">
+              {userOptions.map((option) => (
+                <div
+                  key={option}
+                  className="user-dropdown-item"
+                  onClick={() => handleSelect(option)}
+                >
+                  {option}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
+    </div>
     // </div>
   );
 }

@@ -1,0 +1,153 @@
+.Issues-page-container {
+  background-color: #171616b6;
+  border-radius: 10px;
+  height: 81vh;
+  margin: 1vh 1vw;
+  display: flex;
+  flex-direction: column;
+  /* overflow-y: auto; */
+}
+
+.status-info {
+  /* padding: 1vw; */
+  position: sticky;
+  font-weight: bold;
+  background-color: #8f897fb9;
+  border-radius: 10px 10px 0px 0px;
+  /* width: 96%; */
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* height: 4vh; */
+    width: fit-content;
+    /* gap: 1vw; */
+    list-style-type: none;
+    padding: 1vh 1vw 1vh 0vw;
+    margin: 0;
+
+    li {
+      padding: 0.5vh;
+      margin-left: 1vw;
+      display: flex;
+      align-items: center;
+      gap: 0.3vw;
+      cursor: pointer;
+      text-align: center;
+      border-bottom: 2px solid #05050500;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        border-bottom: 2px solid #050505;
+      }
+    }
+  }
+}
+
+.status-count {
+  background-color: #f0ad4e;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 2px;
+  width: 18px;
+  height: 16px;
+  font-size: 0.8rem;
+}
+
+.issues-cards-technicianPage {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1vw;
+  display: flex;
+  gap: 1vw;
+  flex-wrap: wrap;
+}
+
+.issuesBox-technicianPage {
+  background-color: rgba(239, 233, 233, 0.525);
+  width: 18vw;
+  padding: 2vw;
+  text-align: center;
+  border-radius: 30px;
+  cursor: pointer;
+  gap: 10px;
+
+
+  /* Image */
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  /* Reported on date and time */
+  .serialNo, .reportedOn,
+  .classRoom,
+  .techncianAssigned,
+  .priorityLevel,
+  .issueStatus,
+  .description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: small;
+    p {
+      font-weight: 750;
+      pointer-events: none;
+    }
+    span {
+      color: black;
+      padding-left: 5px;
+      pointer-events: none;
+    }
+  }
+
+  /* Status */
+  .issueStatus {
+    background-color: orange;
+    justify-content: center;
+    font-weight: 1000;
+    border-radius: 20px;
+    width: 100%;
+    pointer-events: none;
+  }
+
+}
+
+.status-container{
+  display: flex;
+}
+
+.issuesBox-technicianPage:hover {
+  transform: scale(1.02);
+}
+
+
+.issuesBox-technicianPage.issuesBox-adminPage:hover{
+    
+}
+
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .Issues-page-container {
+    height: 84vh;
+  }
+  .issuesCards-technicianPage {
+    overflow-x: none;
+  }
+  
+  .issuesBox-technicianPage {
+    width: calc(100% - 4vw);
+  }
+  .serialNo, .reportedOn,
+  .classRoom,
+  .techncianAssigned,
+  .priorityLevel,
+  .issueStatus,
+  .description {
+    justify-content: center;
+  }
+}

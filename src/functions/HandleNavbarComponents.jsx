@@ -1,28 +1,27 @@
 import React from "react";
 
 //Importing functions
-import GetUser from "../functions/GetUser";
+import GetUserType from "./GetUserType";
 
 //Importing component
-
-
 import SignInNavbarComponents from "../Components/signUp/SignIn_navbar_components";
 import UserNavbarConponents from '../pages/userPage/User_navbar_components';
-import AdminNavbarComponents from '../pages/AdminPage/Admin_navbar_components';
+import AdminNavbarComponents from '../pages/AdminPage/AdminNavbarComponents';
 import TechnicianNavbarComponents from "../pages/TechnicianPage/TechnicianNavbarComponents";
 
+
 function HandleNavbarComponents() {
-  const user = GetUser();
+  const userType = GetUserType();
 
   let navContent;
-  if(user){
-    if(user.email.endsWith("@kiit.technician.ac.in")){ //mail check for users
+  if(userType){
+    if(userType === "user"){ //mail check for users
       navContent = <UserNavbarConponents/>;
     }
-    else if(user.email.endsWith("@kiit.admin.ac.in")){//mail check for admins
+    else if(userType === "admin"){//mail check for admins
       navContent = <AdminNavbarComponents/>;
     }
-    else if(user.email.endsWith("@gmail.com")){//mail check for technicians
+    else if(userType === "technician"){//mail check for technicians
       navContent = <TechnicianNavbarComponents/>;
     }
   }

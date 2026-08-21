@@ -22,6 +22,10 @@ function DetailsOfIssues({ setShowDetails }){
         
         <div className="issue-detail">
           <img src="" alt="" />
+            <div className="serialNo">
+              <p>S.I. No: </p>
+              <span>11012344</span>
+            </div>
             <div className="reportedOn">
               <p>Reported on: </p>
               <span>2026-07-30 (12:01)</span>
@@ -46,6 +50,7 @@ function DetailsOfIssues({ setShowDetails }){
               <p>IN PROCESS</p>
             </div>
         </div>
+        
         <div className="issue-solve">
 
         </div>
