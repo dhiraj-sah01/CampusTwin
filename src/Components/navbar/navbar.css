@@ -54,7 +54,7 @@
 @media (max-width: 768px) {
   .navbar-container{
     padding: 15px;
-    height: auto;
+    height: 4vh;
     background-color: rgba(35, 42, 42, 0.354);
   }
   .logo{

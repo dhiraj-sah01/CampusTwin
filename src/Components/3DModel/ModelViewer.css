@@ -5,3 +5,15 @@
     background: #171616;
     border-radius: 16px;
 }
+
+@media (max-width: 768px) {
+    .model-viewer {
+        height: 80vh;
+        ClassroomModel{
+            height: 80vh;
+        }
+        Canvas{
+            height: 80vh;
+        }
+    }
+}

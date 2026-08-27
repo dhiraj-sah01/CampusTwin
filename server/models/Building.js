@@ -1,11 +1,19 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
-const buildingSchema = new mongoose.Schema({
-    name: String,
-    location: [Number],
-    floors: Number,
+const buildingSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+
     block: String,
-    coordinates: [[Number]]
-});
 
-export default mongoose.model("Building", buildingSchema);
+    floors: Number,
+
+    modelPath: String,
+  },
+  { timestamps: true }
+);
+
+module.exports = mongoose.model("Building", buildingSchema);

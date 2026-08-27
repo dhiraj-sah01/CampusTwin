@@ -38,11 +38,12 @@
       transition: background-color 0.3s ease;
 
       &:hover {
-        border-bottom: 2px solid #050505;
+        border-bottom: 2px solid #050505
       }
     }
   }
 }
+
 
 .status-count {
   background-color: #f0ad4e;
@@ -73,6 +74,14 @@
   cursor: pointer;
   gap: 10px;
 
+  .issueID{
+    justify-self: left;
+    color: rgba(193, 201, 201, 0.726);
+    background-color: #0505056f;
+    padding: 0.5vh 0.3vw;
+    border-radius: 20px;
+    font-size: medium;
+  }
 
   /* Image */
   img {
@@ -88,11 +97,11 @@
   .techncianAssigned,
   .priorityLevel,
   .issueStatus,
-  .description {
+  .description, .title {
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: small;
+    font-size: 0.6rem;
     p {
       font-weight: 750;
       pointer-events: none;
@@ -115,6 +124,18 @@
   }
 
 }
+
+.deleteIssue{
+  background-color: red;
+  margin: 1vh 0;
+    justify-content: center;
+    font-weight: 700;
+    border-radius: 20px;
+    /* width: 100%; */
+    padding: 0.5vh;
+    /* pointer-events: none; */
+}
+
 
 .status-container{
   display: flex;
@@ -142,6 +163,10 @@
   .issuesBox-technicianPage {
     width: calc(100% - 4vw);
   }
+  .issueID{
+    font-size: small;
+  }
+
   .serialNo, .reportedOn,
   .classRoom,
   .techncianAssigned,

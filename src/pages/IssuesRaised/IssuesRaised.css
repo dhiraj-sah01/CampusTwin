@@ -1,52 +1,75 @@
-
-.history{
-    padding: 2vw;
-    align-items: center;
+html,
+body {
+  overflow: hidden;
 }
 
+.history {
+  padding: 2vw;
+  height: 76vh;
+  align-items: center;
+  display: flex;
+  gap: 1.5vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+}
 
-.issuesBox{
-    background-color: rgba(239, 233, 233, 0.525);
-    width: 18vw;
-    padding: 1vw;
-    text-align: center;
-    border-radius: 12%;    
+.issuesBox {
+  background-color: rgba(239, 233, 233, 0.525);
+  width: 19vw;
+  padding: 1.5vw;
+  text-align: center;
+  border-radius: 30px;
 
-    /* Image */
-    img{
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
+  /* Image */
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  /* Reported on date and time */
+  .reportedOn,
+  .classRoom,
+  .techncianAssigned,
+  .priorityLevel,
+  .issueStatus,
+  .componentName,
+  .componentTitle,
+  .description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    p {
+      font-weight: 750;
     }
-
-    /* Reported on date and time */
-    .reportedOn, .classRoom, .techncianAssigned, .priorityLevel, .issueStatus, .description{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        font-size:small;
-        p{
-            font-weight: 750;
-        }
-        span{
-            color: black;
-            padding-left: 5px;
-        }
+    span {
+      color: black;
+      padding-left: 5px;
     }
+  }
 
-    /* Status */
-    .issueStatus{
-        background-color: orange;
-        justify-content: center;
-        font-weight: 1000;
-        border-radius: 20px;
-        width: auto ;
-    }
+  /* Status */
+  .issueStatus {
+    background-color: orange;
+    font-weight: 1000;
+    border-radius: 20px;
+    width: 90%;
+    justify-self: center;
+  }
 }
 
 /* Mobile devices */
 @media (max-width: 768px) {
-    .issuesBox{
-        width: 90%;
-    }
+  .history {
+    justify-content: center;
+    height: 83dvh;
+  }
+  .issuesBox {
+    width: 90%;
+    margin-bottom: 1.5vh;
+  }
 }
