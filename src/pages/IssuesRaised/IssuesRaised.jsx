@@ -29,7 +29,7 @@ function History() {
     if (user?.email) {
       getMyIssues();
     }
-  }, [user?.email]);
+  }, [issues,user?.email]);
 
   return (
     <div className="main1">
