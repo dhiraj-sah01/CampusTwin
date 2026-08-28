@@ -160,7 +160,20 @@ function IssuesContainer({ showDetails, setShowDetails, setIssueSI }) {
               }}
             >
               {/* <div className="issueID">#0011</div> */}
-              <img src="" alt="" />
+              <img
+                src={
+                  issues.component_name?.toLowerCase().includes("light")
+                    ? "https://img.icons8.com/?size=100&id=19209&format=png&color=000000"
+                    : issues.component_name?.toLowerCase().includes("projector")
+                      ? "https://img.icons8.com/?size=100&id=11263&format=png&color=000000"
+                      : issues.component_name?.toLowerCase().includes("bench")
+                        ? "https://img.icons8.com/?size=100&id=8714&format=png&color=000000"
+                        : issues.component_name?.toLowerCase().includes("fan")
+                        ? "https://img.icons8.com/?size=100&id=115394&format=png&color=000000"
+                        : "https://img.icons8.com/?size=100&id=cjUb4tRvBCNt&format=png&color=000000"
+                }
+                alt={issues.component_name}
+              />
               <div className="serialNo">
                 <p>S.I. No: </p>
                 <span>{issues.id}</span>

@@ -29,7 +29,7 @@ function History() {
     if (user?.email) {
       getMyIssues();
     }
-  }, [issues,user?.email]);
+  }, [issues, user?.email]);
 
   return (
     <div className="main1">
@@ -65,9 +65,22 @@ function History() {
           </div> */}
 
           {issues.map((issue) => (
-            
             <div className="issuesBox" key={issue.id}>
-              <img src="" alt="" />
+              {/* <img src="" alt="" /> */}
+              <img
+                src={
+                  issue.component_name?.toLowerCase().includes("light")
+                    ? "https://img.icons8.com/?size=100&id=19209&format=png&color=000000"
+                    : issue.component_name?.toLowerCase().includes("projector")
+                      ? "https://img.icons8.com/?size=100&id=11263&format=png&color=000000"
+                      : issue.component_name?.toLowerCase().includes("bench")
+                        ? "https://img.icons8.com/?size=100&id=8714&format=png&color=000000"
+                        : issue.component_name?.toLowerCase().includes("fan")
+                        ? "https://img.icons8.com/?size=100&id=115394&format=png&color=000000"
+                        : "https://img.icons8.com/?size=100&id=cjUb4tRvBCNt&format=png&color=000000"
+                }
+                alt={issue.component_name}
+              />
               <div className="reportedOn">
                 <p>Reported on: </p>
                 <span>{issue.created_at}</span>
@@ -105,7 +118,13 @@ function History() {
                 <span>{issue.priority}</span>
               </div>
 
-              <div className="issueStatus" style={{backgroundColor: issue.status === "In Process" ? 'orange' : 'green'}}>
+              <div
+                className="issueStatus"
+                style={{
+                  backgroundColor:
+                    issue.status === "In Process" ? "orange" : "green",
+                }}
+              >
                 <p>{issue.status}</p>
               </div>
             </div>
